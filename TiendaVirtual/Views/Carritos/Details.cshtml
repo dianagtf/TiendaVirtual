@@ -45,6 +45,14 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+
+    <a href="@Url.Action("Edit", "Carritos", new { id = Model.Id })">
+        <img src="~/Content/icons/edit.png" />
+    </a>
+
+    <a href="@Url.Action("Index", "Carritos", new { id = Model.Id })">
+        <img src="~/Content/icons/back.png" />
+    </a>
+
+
 </p>

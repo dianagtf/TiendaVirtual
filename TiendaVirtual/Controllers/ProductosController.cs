@@ -36,6 +36,7 @@ namespace TiendaVirtual.Controllers
         }
 
         // GET: Productos/Create
+        [Authorize(Users = "admin@admin.es")]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +60,7 @@ namespace TiendaVirtual.Controllers
         }
 
         // GET: Productos/Edit/5
+        [Authorize(Users = "admin@admin.es")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +80,7 @@ namespace TiendaVirtual.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Users = "admin@admin.es")]
         public ActionResult Edit([Bind(Include = "Id,Precio,Cantidad,Descripción,Imagen")] Producto producto)
         {
             if (ModelState.IsValid)
@@ -90,6 +93,7 @@ namespace TiendaVirtual.Controllers
         }
 
         // GET: Productos/Delete/5
+        [Authorize(Users = "admin@admin.es")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,6 +111,7 @@ namespace TiendaVirtual.Controllers
         // POST: Productos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Users = "admin@admin.es")]
         public ActionResult DeleteConfirmed(int id)
         {
             Producto producto = db.Producto.Find(id);

@@ -243,17 +243,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\1984.jpg" />
+    <Content Include="Content\books\1984.jpg" />
+    <Content Include="Content\icons\back.png" />
+    <Content Include="Content\icons\carritoAdd.png" />
+    <Content Include="Content\icons\carritoDelete.png" />
+    <Content Include="Content\icons\delete.png" />
+    <Content Include="Content\icons\details.png" />
+    <Content Include="Content\icons\edit.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\carrito.png" />
-    <Content Include="Content\ded.jpg" />
-    <Content Include="Content\dqdlm.jpg" />
-    <Content Include="Content\lotr.jpg" />
-    <Content Include="Content\mdc.jpg" />
-    <Content Include="Content\notw.jpg" />
-    <Content Include="Content\origen.jpg" />
-    <Content Include="Content\patria.jpg" />
+    <Content Include="Content\icons\carrito.png" />
+    <Content Include="Content\books\ded.jpg" />
+    <Content Include="Content\books\dqdlm.jpg" />
+    <Content Include="Content\books\lotr.jpg" />
+    <Content Include="Content\books\mdc.jpg" />
+    <Content Include="Content\books\notw.jpg" />
+    <Content Include="Content\books\origen.jpg" />
+    <Content Include="Content\books\patria.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
