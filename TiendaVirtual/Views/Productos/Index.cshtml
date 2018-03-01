@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<TiendaVirtual.Producto>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Books";
 }
 
 <h2>Books available</h2>
@@ -28,28 +28,31 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Precio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cantidad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripción)
-        </td>
-        <td>
-            <img src="~/Content/@(item.Imagen).jpg" width="90" />
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+        if (item.Cantidad != 0)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripción)
+                </td>
+                <td>
+                    <img src="~/Content/@(item.Imagen).jpg" width="90" />
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
 
-            @Html.ActionLink("Add to basket", "Add", "Carritos", new { id = item.Id }, null)
+                    @Html.ActionLink("Add to basket", "Add", "Carritos", new { id = item.Id }, null)
 
-        </td>
-    </tr>
+                </td>
+            </tr>
+        }
     }
 
 </table>

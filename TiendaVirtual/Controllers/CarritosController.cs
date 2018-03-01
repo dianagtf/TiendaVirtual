@@ -20,6 +20,10 @@ namespace TiendaVirtual.Controllers
             TablaProductoEntities conn = new TablaProductoEntities();
             Producto prod = conn.Producto.Find(id);
             cc.Add(prod);
+            prod.Cantidad = prod.Cantidad - 1;
+
+            db.Entry(prod).State = EntityState.Modified;
+            db.SaveChanges();
 
             //Cada vez que se pincha el carrito, nos mostrará lo que hay en el carrito de la compra.
             return View("Index", cc);
