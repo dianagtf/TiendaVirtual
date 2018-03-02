@@ -13,16 +13,25 @@ namespace TiendaVirtual.Controllers
 {
     public class CarritosController : Controller
     {
-
+        Pedido pedido = new Pedido();
         // GET: Carrito
         public ActionResult Add(int id, Carrito cc)
         {
             TablaProductoEntities conn = new TablaProductoEntities();
+   
             Producto prod = conn.Producto.Find(id);
+            pedido.IdProducto = prod.Id;
+            pedido.IdUsuario = 1;
+            pedido.Precio = prod.Precio;
+            pedido.Fecha = System.DateTime.Now;
+            
             cc.Add(prod);
             prod.Cantidad = prod.Cantidad - 1;
+            db.Pedido.Add(pedido);
+          
 
             db.Entry(prod).State = EntityState.Modified;
+    
             db.SaveChanges();
 
             //Cada vez que se pincha el carrito, nos mostrará lo que hay en el carrito de la compra.
@@ -131,6 +140,8 @@ namespace TiendaVirtual.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
 
         protected override void Dispose(bool disposing)
         {
