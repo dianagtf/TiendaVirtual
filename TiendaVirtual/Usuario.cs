@@ -14,11 +14,13 @@ namespace TiendaVirtual
     
     public partial class Usuario
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Email { get; set; }
-        public string Telefono { get; set; }
-        public string Direccion { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public string apellidos { get; set; }
+        public string login { get; set; }
+        public string password { get; set; }
+        public string email { get; set; }
+        public string telefono { get; set; }
+        public string direccion { get; set; }
     }
 }
