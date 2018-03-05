@@ -31,8 +31,7 @@
 
     @foreach (var item in Model)
     {
-        if (item.Cantidad != 0)
-        {
+
     <tr>
         <td>
             <img src="~/Content/books/@(item.Imagen)" width="90" />
@@ -61,12 +60,19 @@
             <a href="@Url.Action("Delete", "Productos", new { id = item.Id })">
                 <img src="~/Content/icons/delete.png" />
             </a>
-
+            @if (item.Cantidad != 0)
+            {
             <a href="@Url.Action("Add", "Carritos", new { id = item.Id })">
+
                 <img src="~/Content/icons/carritoAdd.png" />
             </a>
+            }
+            @if (item.Cantidad == 0)
+            {
+             <img src="~/Content/icons/carritoDelete.png" />
+             <p>No hay stock!!!</p>
+            }
         </td>
     </tr>
-        }
     }
 </table>
